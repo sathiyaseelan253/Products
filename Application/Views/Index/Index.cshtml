@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Using ViewData</h2>
+
+<table cellpadding="20" border="3" padding="5">
+    <tr>
+        <th>ProductId</th>
+        <th>ProductName</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    @foreach (Items.Entity.Products products in (IEnumerable<Items.Entity.Products>)ViewData["product"])
+    {
+        <tr>
+
+            <td>@products.ProductId</td>
+            <td>@products.ProductName</td>
+            <td>@products.Description></td>
+            <td>@products.rupees</td>
+        </tr>
+
+
+
+    }
+
+</table>
+<br />
+
+<h2>Using ViewBag</h2>
+<table cellpadding="20" border="3" padding="5">
+    <tr>
+        <th>ProductId</th>
+        <th>ProductName</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var products in ViewBag.products)
+    {
+        <tr>
+
+            <td>@products.ProductId</td>
+            <td>@products.ProductName</td>
+            <td>@products.Description></td>
+            <td>@products.rupees</td>
+        </tr>
+
+
+
+    }
+</table>
+<br />
+
+<h2>Using TempData</h2>
+<table cellpadding="20" border="3" padding="5">
+    <tr>
+        <th>ProductId</th>
+        <th>ProductName</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    @foreach (Items.Entity.Products products in (IEnumerable<Items.Entity.Products>) TempData["products"])
+    {
+        <tr>
+
+            <td>@products.ProductId</td>
+            <td>@products.ProductName</td>
+            <td>@products.Description></td>
+            <td>@products.rupees</td>
+        </tr>
+
+
+
+    }
+</table>
+
+
